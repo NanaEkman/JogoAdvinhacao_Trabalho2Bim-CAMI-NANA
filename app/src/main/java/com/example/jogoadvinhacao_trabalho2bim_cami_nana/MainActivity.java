@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtResultado;
 
     private int numeroUsuario = 0;
+    private int numeroSorteado = 0;
 
 
-    //gets das variáveis
+    //gets e sets das variáveis
     public Button getBtn1() {
         return btn1;
     }
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
         return numeroSorteado;
     }
 
+    public void setNumeroSorteado(int numeroSorteado) {
+        this.numeroSorteado = numeroSorteado;
+    }
+
+    public void setNumeroUsuario(int numeroUsuario) {
+        this.numeroUsuario = numeroUsuario;
+    }
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -83,36 +91,46 @@ public class MainActivity extends AppCompatActivity {
         return num;
 
     }
-    private int numeroSorteado = getRandom(3);
+
 
     //pegando o número escolhido pelo usuário
     class EscutadorBtn1 implements View.OnClickListener {
         @Override
         public void onClick(View view) {
+            numeroSorteado = getRandom(3);
             numeroUsuario = 1;
+            resultado(numeroSorteado, numeroUsuario);
         }
     }
 
     class EscutadorBtn2 implements View.OnClickListener {
         @Override
         public void onClick(View view) {
+            numeroSorteado = getRandom(3);
             numeroUsuario = 2;
+            resultado(numeroSorteado, numeroUsuario);
         }
     }
     class EscutadorBtn3 implements View.OnClickListener {
         @Override
         public void onClick(View view) {
+            numeroSorteado = getRandom(3);
             numeroUsuario = 3;
+            resultado(numeroSorteado, numeroUsuario);
         }
     }
 
-    //colocando o número sorteado na tela
-    txtNumero.setText(Integer.toString(numeroSorteado));
+    public void resultado(int numSorteado, int numUsuario){
+        //colocando o número sorteado na tela
+        txtNumero.setText(Integer.toString(numSorteado));
 
+        //comparando resultados
+        if (numSorteado == numUsuario){
+            txtResultado.setText("Você ganhou!!");
+        } else {
+            txtResultado.setText("Você perdeu!!");
+        }
 
-    //comparando resultados
-    if (numeroSorteado == numeroUsuario){
-        txtResultado.setText("Você ganhou!!");
     }
 
 }
