@@ -6,7 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btn2;
     private Button btn3;
 
-    private EditText txtNumero;
-    private EditText txtResultado;
+    private TextView txtNumero;
+    private TextView txtResultado;
 
     private int numeroUsuario = 0;
     private int numeroSorteado = 0;
@@ -40,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         return btn3;
     }
 
-    public EditText getTxtNumero() {
+    public TextView getTxtNumero() {
         return txtNumero;
     }
 
-    public EditText getTxtResultado() {
+    public TextView getTxtResultado() {
         return txtResultado;
     }
 
