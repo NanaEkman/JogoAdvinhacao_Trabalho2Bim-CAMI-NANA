@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //comparando e mostrando e resultado
     public void resultado(int numSorteado, int numUsuario){
         //colocando o número sorteado na tela
         txtNumero.setText(Integer.toString(numSorteado));
@@ -127,8 +129,10 @@ public class MainActivity extends AppCompatActivity {
         //comparando resultados
         if (numSorteado == numUsuario){
             txtResultado.setText("Você ganhou!!");
+            Toast.makeText(this, "Você ganhou!!", Toast.LENGTH_SHORT).show();
         } else {
             txtResultado.setText("Você perdeu!!");
+            Toast.makeText(this, "Você perdeu!!", Toast.LENGTH_SHORT).show();
         }
 
     }
